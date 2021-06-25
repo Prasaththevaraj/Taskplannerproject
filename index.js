@@ -20,7 +20,7 @@ taskForm.addEventListener("submit", (event)=>{
 
      event.stopPropagation();
 
-    consta
+   
     
     console.log(inputName);
     const clearForms = ()=> {

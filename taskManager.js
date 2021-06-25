@@ -1,4 +1,4 @@
-const createTaskHtml = ( id, name, description, assignedTo, dueDate, status) => {
+const createTaskHtml = ( name, description, assignedTo, dueDate, status) => {
     const html = `
     
     <div class="card-body">
@@ -64,7 +64,7 @@ class TaskManager {
           date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(); 
           
           const taskHtml = createTaskHtml(
-            task.id,
+            
             task.name,
             task.description,
             task.assignedTo,
