@@ -103,4 +103,18 @@ load() {
     this.currentId = Number(currentId);
   }
  }
+
+ deleteTask(taskId) {
+  const newTasks = [];
+
+  for (let i = 0; i < this.tasks.length; i++) {
+    const task = this.tasks[i];
+
+    if (task.id !== taskId) {
+     
+      newTasks.push(task);
+    }
+  }
+ this.tasks = newTasks;
+}
 }

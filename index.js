@@ -114,4 +114,17 @@ taskName.addEventListener("click", (event) => {
     taskManager.save();
     taskManager.render();
   }
+  // Delete button 
+  if (event.target.classList.contains("btn-danger")) {
+    const parentTask =
+      event.target.parentElement.parentElement;
+
+    const taskId = Number(parentTask.dataset.taskId);
+
+    taskManager.deleteTask(taskId);
+
+    taskManager.save();
+
+    taskManager.render();
+  }
 });
