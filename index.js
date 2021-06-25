@@ -3,7 +3,8 @@
 
 
 const taskManager = new TaskManager(0);
-
+taskManager.load();
+taskManager.render();
 const taskForm = document.querySelector('#taskForm')
 
 taskForm.addEventListener("submit", (event)=>{
@@ -23,7 +24,7 @@ taskForm.addEventListener("submit", (event)=>{
    
     
     console.log(inputName);
-    const clearForms = ()=> {
+    const clearFormField = () => {
         inputName.value = "";
         inputDescription.value = "";
         inputAssignTo.value = "";
@@ -93,7 +94,8 @@ taskForm.addEventListener("submit", (event)=>{
         return;
       } else {
            taskManager.addTask(inputName.value, inputDescription.value, inputAssignTo.value, inputdueDate.value, inputStatus.value)
-          clearForms(); 
+          clearFormField(); 
+          taskManager.save();
           taskManager.render();
         
         }
@@ -109,7 +111,7 @@ taskName.addEventListener("click", (event) => {
     const taskId = Number(parentTask.dataset.taskId);
     const task = taskManager.getTaskById(taskId);
     task.status = "Done";
-
+    taskManager.save();
     taskManager.render();
   }
 });

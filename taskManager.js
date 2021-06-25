@@ -76,11 +76,13 @@ class TaskManager {
       }
 
       const tasksHtml = tasksHtmlList.join("\n");
-      const tasksName = document.querySelector("#taskname");
+      const taskName = document.querySelector("#taskname");
       taskName.innerHTML = tasksHtml;
     }
 
     // Task Nine 
+
+
 
 save() {
   const tasksJson = JSON.stringify(this.tasks);
@@ -100,20 +102,5 @@ load() {
 
     this.currentId = Number(currentId);
   }
+ }
 }
-}
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
