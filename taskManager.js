@@ -1,5 +1,5 @@
-const createTaskHtml = ( name, description, assignedTo, dueDate, status) => {
-    const html = `
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+    const html = `<li class="card" data-task-id="${id}" style="min-width: 50vw">
     
     <div class="card-body">
       <h5 class="card-title">${name}</h5>
@@ -15,7 +15,7 @@ const createTaskHtml = ( name, description, assignedTo, dueDate, status) => {
       
     
   </div>
-  `
+  </li>`
     return html;
   };
 
@@ -64,7 +64,7 @@ class TaskManager {
           date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(); 
           
           const taskHtml = createTaskHtml(
-            
+            task.id,
             task.name,
             task.description,
             task.assignedTo,
