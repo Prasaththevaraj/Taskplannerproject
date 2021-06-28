@@ -120,11 +120,8 @@ taskName.addEventListener("click", (event) => {
       event.target.parentElement.parentElement;
 
     const taskId = Number(parentTask.dataset.taskId);
-
     taskManager.deleteTask(taskId);
-
     taskManager.save();
-
     taskManager.render();
   }
 });

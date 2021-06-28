@@ -2,10 +2,15 @@
 margin-left: 100px;
 }
     
-/* .btn {
-    margin-left: 18px;
-} */
+ /* .btn {
+    
+    align-items: center; */
 
+ 
 h1 {
     text-align: center;
+}
+
+ .card-body {
+    background-color: rgb(194, 209, 236);
 }
